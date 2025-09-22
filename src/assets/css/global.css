@@ -1,0 +1,60 @@
+/* 
+    src\assets\css\global.css
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Elementos globales */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor centrado */
+.container {
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+/* Texto atenuado */
+.muted {
+    color: var(--muted);
+}
+
+/* Accesibilidad */
+button, a, input, textarea, select {
+    outline-offset: 2px;
+}

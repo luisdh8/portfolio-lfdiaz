@@ -1,0 +1,48 @@
+/* 
+    src\assets\css\Header.module.css
+*/
+
+@import './tokens.css';
+
+.header {
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--primary);
+}
+
+.containerLogo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 24px;
+    height: 24px;
+}
+
+.logoText {
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    font-weight: medium;
+}
+
+.nav a {
+    color: #F3F6F7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}

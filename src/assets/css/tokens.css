@@ -1,0 +1,12 @@
+/* 
+    src\assets\css\tokens.css
+*/
+
+:root {
+    --primary: #354649;
+    --accent: #2ab7ca;
+    --background: #F3F6F7;
+    --text: #111827;
+    --muted: #6b7280;
+    --font-family: 'Raleway', sans-serif;
+}
