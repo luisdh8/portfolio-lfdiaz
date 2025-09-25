@@ -6,7 +6,15 @@
 
 .section {
     width: 100%;
+    padding: 4rem 0;
+}
+
+.container {
+    width: 100%;
     margin: 0 auto;
     max-width: 80%;
-    padding: 4rem 0;
+}
+
+.aboutMeSection {
+    background-color: #D9E3E5;
 }

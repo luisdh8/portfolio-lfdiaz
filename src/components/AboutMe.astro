@@ -1,4 +1,26 @@
 ---
-
+// src/components/AboutMe.astro
+import styles from "../assets/css/AboutMe.module.css";
 ---
+
+<div class={styles.aboutMe}>
+    <h2 class={styles.title}>About me</h2>
+    <div class={styles.content}>
+        <p class={styles.paragraph}>
+            Hi, I'm <span class={styles.highlight}>Luis Fernando Díaz Hernández</span>, a software developer passionate about using technology to 
+            solve real-world problems. I'm currently studying Computer Science and enjoy working with tools like 
+            Python, C++, JavaScript, and Oracle APEX. I've developed AI-powered applications and participated in 
+            the design of smart systems through IoT. I love diving into cutting-edge technologies to solve real-world challenges.
+        </p>
+        <p class={styles.paragraph}>
+            Outside of coding, I've been a peer mentor, guiding freshmen through their first year at university, and I 
+            also served as a lead engineer for my FIRST Robotics team, Daedalus 7102. I'm a huge Formula 1 fan 
+            and participate in sim racing competitions, combining strategy and data analysis to improve my 
+            performance.
+        </p>
+        <p class={styles.paragraph}>
+            Take a look at my projects, and feel free to reach out if you'd like to connect!
+        </p>
+    </div>
+</div>
 

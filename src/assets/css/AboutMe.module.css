@@ -1,0 +1,35 @@
+/* 
+    src/assets/css/AboutMe.module.css
+*/
+
+@import './tokens.css';
+
+.aboutMe {
+    max-width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--text);
+}

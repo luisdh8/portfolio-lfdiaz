@@ -2,11 +2,14 @@
 
 // src/pages/index.astro
 
+import { supabase } from "../api/supabase";
+
+import sectionStyles from "../assets/css/SectionContainer.module.css";
+
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Hero from "../components/Hero.astro";
 import AboutMe from "../components/AboutMe.astro";
-import { supabase } from "../api/supabase";
 
 ---
 <Layout
@@ -17,8 +20,26 @@ import { supabase } from "../api/supabase";
 		<SectionContainer>
 			<Hero />
 		</SectionContainer>
-		<SectionContainer id="about">
+		<SectionContainer id="about" class={sectionStyles.aboutMeSection}>
 			<AboutMe />
+		</SectionContainer>
+		<SectionContainer>
+			<Skills />
+		</SectionContainer>
+		<SectionContainer>
+			<Hobbies />
+		</SectionContainer>
+		<SectionContainer>
+			<Education />
+		</SectionContainer>
+		<SectionContainer>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer>
+			<Contact />
 		</SectionContainer>
 	</main>
 </Layout>

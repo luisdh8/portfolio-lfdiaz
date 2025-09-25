@@ -8,5 +8,7 @@ const { class: className, id } = Astro.props
   data-section={id}
   class={`${styles.section} ${className || ''}`}
 >
-  <slot />
+  <div class={styles.container}>
+    <slot />
+  </div>
 </section>
