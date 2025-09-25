@@ -1,0 +1,87 @@
+/* 
+    src/assets/css/Hero.module.css
+*/
+
+@import './tokens.css';
+
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    height: 100%;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text);
+    margin: 0;
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 600px;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.actionButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    font-family: var(--font-family);
+}
+
+.actionButton:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+.actionButton:hover .arrow {
+    transform: translateX(2px);
+}
+
+.arrow {
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.imageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+}
+
+.profileImage {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--text);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}

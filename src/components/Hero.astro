@@ -1,0 +1,52 @@
+---
+// src/components/Hero.astro
+import styles from "../assets/css/Hero.module.css";
+import GithubIcon from "./icons/Github.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import YoutubeIcon from "./icons/Youtube.astro";
+import WordPressIcon from "./icons/WordPress.astro";
+import ProfilePic from '../assets/images/profilePic.jpg';
+---
+
+<div class={styles.hero}>
+    <div class={styles.content}>
+        <h1 class={styles.title}>Hi! This is Luis Díaz</h1>
+        <p class={styles.description}>
+            I'm Computer Science student from 5th semester @ Tec de Monterrey Campus Guadalajara, and I'm currently a Database Support Intern at Oracle. I'm passionate about technology, coding, F1, and helping others learn through my blog and YouTube channel.
+        </p>
+        <div class={styles.actions}>
+            <a href="https://github.com/luisdh8" target="_blank" rel="noopener noreferrer" class={styles.actionButton}>
+                <span class={styles.arrow}>
+                    <GithubIcon width="16" height="16" />
+                </span>
+                Github
+            </a>
+            <a href="https://www.linkedin.com/in/luisdiazhdez/" target="_blank" rel="noopener noreferrer" class={styles.actionButton}>
+                <span class={styles.arrow}>
+                    <LinkedInIcon width="16" height="16" />
+                </span>
+                LinkedIn
+            </a>
+            <a href="https://youtube.com/@kiburld" target="_blank" rel="noopener noreferrer" class={styles.actionButton}>
+                <span class={styles.arrow}>
+                    <YoutubeIcon width="16" height="16" />
+                </span>
+                Youtube
+            </a>
+            <a href="https://luisfdiazblog.wordpress.com/" target="_blank" rel="noopener noreferrer" class={styles.actionButton}>
+                <span class={styles.arrow}>
+                    <WordPressIcon width="16" height="16" />
+                </span>
+                Blog
+            </a>
+        </div>
+    </div>
+    <div class={styles.imageSection}>
+        <img 
+            src={ProfilePic.src}
+            alt="Luis Díaz" 
+            class={styles.profileImage}
+            loading="lazy"
+        />
+    </div>
+</div>

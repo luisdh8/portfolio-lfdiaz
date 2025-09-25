@@ -1,0 +1,12 @@
+---
+import styles from "../assets/css/SectionContainer.module.css";
+const { class: className, id } = Astro.props
+---
+
+<section
+  id={id}
+  data-section={id}
+  class={`${styles.section} ${className || ''}`}
+>
+  <slot />
+</section>

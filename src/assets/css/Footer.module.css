@@ -1,0 +1,17 @@
+/* 
+    src/assets/css/Footer.module.css
+*/
+
+@import './tokens.css';
+
+.footer {
+    background-color: var(--primary);
+    padding: 1rem;
+    text-align: center;
+}
+
+.copyright {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}

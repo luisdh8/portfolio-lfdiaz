@@ -3,21 +3,22 @@
 // src/pages/index.astro
 
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Hero from "../components/Hero.astro";
+import AboutMe from "../components/AboutMe.astro";
 import { supabase } from "../api/supabase";
 
-const { data: socials } = await supabase
-	.from("socials")
-	.select("platform,url,icon_url")
-	.order("order_int", { ascending: true });
 ---
-<Layout>
-	<Header socials={socials ?? []} />
-
+<Layout
+	title="Luis Díaz's Portfolio - Student in Computer Science @ Tec de Monterrey Campus Guadalajara"
+	description="Discover Luis Díaz's passion for technology, coding, and innovation through his projects, skills, and blog posts."
+>
 	<main>
-		<section id="about">
-			<h1>Hi! This is Luis Díaz</h1>
-			<p>CS student at Tec de Monterrey...</p>
-		</section>
+		<SectionContainer>
+			<Hero />
+		</SectionContainer>
+		<SectionContainer id="about">
+			<AboutMe />
+		</SectionContainer>
 	</main>
 </Layout>
