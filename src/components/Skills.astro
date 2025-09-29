@@ -1,0 +1,118 @@
+---
+// src/components/Skills.astro
+import { getSkillsData } from "../api/supabase";
+import styles from "../assets/css/Skills.module.css";
+
+// Import ALL your existing icon components
+import AstroIcon from "./icons/Astro.astro";
+import CssIcon from "./icons/Css.astro";
+import GitIcon from "./icons/Git.astro";
+import GithubIcon from "./icons/Github.astro";
+import HtmlIcon from "./icons/Html.astro";
+import JavaScriptIcon from "./icons/JavaScript.astro";
+import LinuxIcon from "../assets/icons/linux.svg";
+import NodeIcon from "../assets/icons/node.svg";
+import PostgreSQLIcon from "./icons/PostgreSQL.astro";
+import PythonIcon from "../assets/icons/python.svg";
+import ReactIcon from "./icons/React.astro";
+import SqlIcon from "./icons/Sql.astro";
+import SupabaseIcon from "../assets/icons/supabase-logo-icon.svg";
+import TailwindIcon from "./icons/Tailwind.astro";
+import TypeScriptIcon from "./icons/TypeScript.astro";
+import VercelIcon from "./icons/Vercel.astro";
+import WordPressIcon from "./icons/WordPress.astro";
+import YoutubeIcon from "./icons/Youtube.astro";
+import CPPIcon from "./icons/CPP.astro";
+import FigmaIcon from "./icons/Figma.astro";
+import FlaskIcon from "./icons/Flask.astro";
+import OracleDBIcon from "./icons/OracleDB.astro";
+import OracleAPEXIcon from "../assets/icons/apex.svg";
+
+const { data: skillsData, error } = await getSkillsData();
+
+// Icon mapping function with ALL icons from your database
+function getIconComponent(skillName: string) {
+    const iconMap: { [key: string]: any } = {
+        // Programming Languages & Frameworks
+        'astro': AstroIcon,
+        'c++': CPPIcon,
+        'css': CssIcon,
+        'html': HtmlIcon,
+        'javascript': JavaScriptIcon,
+        'python': PythonIcon,
+        'react': ReactIcon,
+        'reactnative': ReactIcon, // Using React icon for React Native
+        'typescript': TypeScriptIcon,
+        'tailwind': TailwindIcon,
+        
+        // Databases
+        'postgresql': PostgreSQLIcon,
+        'postgres': PostgreSQLIcon,
+        'sql': SqlIcon,
+        'oraclesql': SqlIcon, // Using SQL icon for Oracle SQL
+        'oracledatabase': OracleDBIcon,
+        
+        // Tools & Platforms
+        'git': GitIcon,
+        'github': GithubIcon,
+        'linux': LinuxIcon,
+        'node.js': NodeIcon,
+        'nodejs': NodeIcon,
+        'figma': FigmaIcon,
+        'flask': FlaskIcon,
+        'supabase': SupabaseIcon,
+        'vercel': VercelIcon,
+        
+        // Special cases from your DB
+        'oracleapex': OracleAPEXIcon, // Using Oracle APEX icon
+    };
+    
+    const normalizedName = skillName.toLowerCase().replace(/\s+/g, '').replace(/\./g, '');
+    return iconMap[normalizedName];
+}
+
+// Categorize skills based on your database categories
+const skills: any[] = [];
+const technologies: any[] = [];
+
+if (skillsData) {
+    skillsData.forEach((item: any) => {
+        if (item.category === 'skill') {
+            skills.push(item);
+        } else if (item.category === 'technology') {
+            technologies.push(item);
+        }
+    });
+}
+
+const skillsRows = [skills, technologies];
+---
+
+<div class={styles.skillsCarousel}>
+    {skillsRows.map((rowItems, rowIndex) => (
+        <div class={`${styles.skillsRow} ${styles[`row${rowIndex + 1}`]}`}>
+            <div class={styles.skillsTrack}>
+                {/* Duplicate items for seamless loop */}
+                {[...rowItems, ...rowItems].map((item, index) => {
+                    const IconComponent = getIconComponent(item.name);
+                    return (
+                        <div class={styles.skillItem}>
+                            <div class={styles.skillCard}>
+                                <div class={styles.skillIcon}>
+                                    {IconComponent ? (
+                                        <IconComponent />
+                                    ) : (
+                                        <div>
+                                            {item.name.charAt(0).toUpperCase()}
+                                        </div>
+                                    )}
+                                </div>
+                                <span class={styles.skillName}>{item.name}</span>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    ))}
+</div>

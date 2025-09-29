@@ -1,0 +1,17 @@
+---
+// src/components/Journey.astro
+import { getFormattedJourneyData } from "../api/supabase";
+import JourneyItem from "./JourneyItem.astro";
+
+const { data: formattedJourneyData, error } = await getFormattedJourneyData();
+---
+
+<ol>
+    {
+        formattedJourneyData?.map((data) => (
+            <li style="list-style-type: none;">
+                <JourneyItem {...data} />
+            </li>
+        )) 
+    }
+</ol>

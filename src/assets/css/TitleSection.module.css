@@ -1,0 +1,13 @@
+/* 
+    src/assets/css/TitleSection.module.css
+*/
+
+@import './tokens.css';
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}

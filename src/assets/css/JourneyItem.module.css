@@ -1,0 +1,66 @@
+/* 
+    src/assets/css/JourneyItem.module.css
+*/
+
+@import './tokens.css';
+
+.journeyItem {
+    position: relative;
+    /* margin: top right bottom left */
+    margin: 0 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Timeline line */
+.journeyItem::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.journeyContent {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.stickyContent {
+    margin-top: .5rem;
+    position: static;
+}
+
+/* Timeline bullet point */
+.bullet {
+    position: absolute;
+    left: -42px;
+    top: 0;
+    color: var(--accent);
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    text-decoration: underline;
+}
+
+.company {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 0.5rem 0;
+}
+
+.tech_stack {
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0 0 0.5rem 0;
+}

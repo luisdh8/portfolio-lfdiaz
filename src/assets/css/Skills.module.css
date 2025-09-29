@@ -1,0 +1,100 @@
+/* 
+    src/assets/css/Skills.module.css
+*/
+
+@import './tokens.css';
+
+.skillsCarousel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+    width: 100%;
+    --slide-size: 11rem;
+    --slide-spacing: 1rem;
+}
+
+.skillsRow {
+    overflow: hidden;
+    position: relative;
+}
+
+.skillsTrack {
+    display: flex;
+    gap: var(--slide-spacing);
+}
+
+.skillItem {
+    flex: 0 0 var(--slide-size);
+    min-width: var(--slide-size);
+}
+
+.skillCard {
+    width: 100%;
+    height: var(--slide-size);
+    border: 2px solid var(--text);
+    border-radius: 1rem;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skillCard:hover {
+    background-color: var(--text);
+    color: var(--background);
+}
+
+.skillIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.skillIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.skillName {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: inherit;
+    text-align: center;
+}
+
+/* Row 1: Skills - Scroll Left */
+.row1 .skillsTrack {
+    animation: scrollLeft 30s linear infinite;
+}
+
+/* Row 2: Technologies - Scroll Right */
+.row2 .skillsTrack {
+    animation: scrollRight 35s linear infinite;
+}
+
+/* Animation Keyframes */
+@keyframes scrollLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}

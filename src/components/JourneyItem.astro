@@ -1,0 +1,36 @@
+---
+// src/components/JourneyItem.astro
+
+import styles from "../assets/css/JourneyItem.module.css";
+import MainButton from "./CallToActionButton.astro"
+import TechStack from "./TechStack.astro";
+
+interface Props {
+    org: string;
+    role: string;
+    location: string;
+    start_date: string;
+    end_date: string | null;
+    description_md: string;
+    bullets: string[];
+    tech_stack: string[];
+    dateRange: string;
+}
+
+const { org, role, location, start_date, end_date, description_md, bullets, tech_stack, dateRange }: Props = Astro.props;
+
+---
+
+<div class={styles.journeyItem}>
+    <div class={styles.journeyContent}>
+        <div class={styles.stickyContent}>
+            <span class={styles.bullet}>&bull;</span>
+            <h3 class={styles.role}>{dateRange} | {role}</h3>
+            <h4 class={styles.company}>{org} - {location}</h4>
+            <TechStack technologies={tech_stack} />
+            <MainButton>
+                Read More
+            </MainButton>
+        </div>
+    </div>
+</div>

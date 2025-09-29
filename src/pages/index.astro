@@ -12,10 +12,10 @@ import Hero from "../components/Hero.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Skills from "../components/Skills.astro";
 import Hobbies from "../components/Hobbies.astro";
-import Education from "../components/Education.astro";
-import Experience from "../components/Experience.astro";
+import Journey from "../components/Journey.astro";
 import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
+import TitleSection from "../components/TitleSection.astro";
 
 ---
 <Layout
@@ -23,28 +23,31 @@ import Contact from "../components/Contact.astro";
 	description="Discover Luis Díaz's passion for technology, coding, and innovation through his projects, skills, and blog posts."
 >
 	<main>
-		<SectionContainer>
+		<SectionContainer id="home">
 			<Hero />
 		</SectionContainer>
 		<SectionContainer id="about" class={sectionStyles.aboutMeSection}>
+			<TitleSection title="About Me" as="h2" />
 			<AboutMe />
 		</SectionContainer>
+		<SectionContainer id ="my-journey">
+			<TitleSection title="My Journey" as="h2" />
+			<Journey />
+		</SectionContainer>
 		<SectionContainer>
+			<TitleSection title="Skills & Technologies" as="h2" />
 			<Skills />
 		</SectionContainer>
 		<SectionContainer>
+			<TitleSection title="Hobbies & Interests" as="h2" />
 			<Hobbies />
 		</SectionContainer>
 		<SectionContainer>
-			<Education />
-		</SectionContainer>
-		<SectionContainer>
-			<Experience />
-		</SectionContainer>
-		<SectionContainer>
+			<TitleSection title="My Featured Projects" as="h2" />
 			<Projects />
 		</SectionContainer>
 		<SectionContainer>
+			<TitleSection title="Contact Me!" as="h2" />
 			<Contact />
 		</SectionContainer>
 	</main>

@@ -1,0 +1,17 @@
+---
+// src/components/TitleSection.astro
+import styles from "../assets/css/TitleSection.module.css";
+
+interface Props {
+    title: string;
+    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    class?: string;
+}
+
+const { title, as = "h2", class: className } = Astro.props;
+const Tag = as;
+---
+
+<Tag class={`${styles.title} ${className || ''}`}>
+    {title}
+</Tag>

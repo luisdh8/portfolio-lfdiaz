@@ -1,0 +1,32 @@
+/* 
+    src/assets/css/TechStack.module.css
+*/
+
+@import './tokens.css';
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--text);
+    white-space: nowrap;
+}
+
+.tag:hover {
+    background-color: var(--text);
+    transition: background-color 0.2s ease;
+    color: var(--background);
+}

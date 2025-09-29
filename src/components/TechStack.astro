@@ -1,0 +1,19 @@
+---
+// src/components/TechStack.astro
+import styles from "../assets/css/TechStack.module.css";
+
+interface Props {
+    technologies: string[];
+    class?: string;
+}
+
+const { technologies, class: className } = Astro.props;
+---
+
+<div class={`${styles.techStack} ${className || ''}`}>
+    {technologies?.map((tech) => (
+        <span class={styles.tag}>
+            {tech}
+        </span>
+    ))}
+</div>
