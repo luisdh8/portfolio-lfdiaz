@@ -1,5 +1,6 @@
 ---
 // src/components/Hero.astro
+import { Image } from 'astro:assets';
 import styles from "../assets/css/Hero.module.css";
 import GithubIcon from "./icons/Github.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
@@ -42,11 +43,13 @@ import ProfilePic from '../assets/images/profilePic.jpg';
         </div>
     </div>
     <div class={styles.imageSection}>
-        <img 
-            src={ProfilePic.src}
+        <Image 
+            src={ProfilePic}
             alt="Luis Díaz" 
             class={styles.profileImage}
-            loading="lazy"
+            loading="eager"
+            width={280}
+            height={280}
         />
     </div>
 </div>
